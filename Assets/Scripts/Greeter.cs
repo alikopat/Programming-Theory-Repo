@@ -7,6 +7,9 @@ public class Greeter : MonoBehaviour
 
     private void Start()
     {
-        greetText.text = $"Hoşgeldin {DataManager.Singleton.Name}";
+        if(DataManager.Singleton == null)
+            greetText.text = $"Welcome unnamed creature!";
+        else
+            greetText.text = $"Welcome {DataManager.Singleton.Name}";
     }
 }
